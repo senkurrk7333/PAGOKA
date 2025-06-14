@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Amor!</title>
+    <style>
+        body {
+            background-color: #f8c8d8;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #4a2c2c;
+            animation: fadeIn 2s;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-top: 10%;
+            animation: bounce 2s infinite;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px;
+            line-height: 1.5;
+        }
+
+        .balloon {
+            position: relative;
+            display: inline-block;
+            font-size: 3em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 5px solid transparent;
+            padding: 5px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-wrapper::before {
+            content: '💜🫧';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 30px;
+            color: purple;
+        }
+
+        .image-wrapper::after {
+            content: '💜✨';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            font-size: 30px;
+            color: purple;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: purple;
+            opacity: 0.8;
+            animation: fall 1s forwards;
+            border-radius: 50%;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(500px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Aniversário, Meu Amor!</h1>
+    <div class="container">
+        <p>Hoje é um dia muito especial, e eu quero que você saiba o quanto você é importante para mim.</p>
+        <p>Você ilumina minha vida com seu sorriso e traz alegria ao meu coração. Que este novo ano de vida seja repleto de amor, felicidade e realizações!</p>
+        <p>Te amo muito e sempre estarei ao seu lado, celebrando cada momento juntos.</p>
+        <div class="balloon" onclick="releaseConfetti()">🥳🎉</div>
+        <p>Vamos fazer deste dia o melhor de todos!</p>
+        
+        <div class="image-gallery">
+            <div class="image-wrapper">
+                <img src="https://i.postimg.cc/63KCBqK0/Imagen-de-Whats-App-2025-06-13-a-las-18-24-01-c23f9f67.jpg" style="width: 217px; height: 100p;" alt="Imagem de Aniversário 1" />
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.postimg.cc/6p1H6dbh/1keiner.jpg" style="width: 170px; height: 100p;" alt="Imagem de Aniversário 2" />
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.postimg.cc/pr4fbZL9/img-33.jpg" style="width: 168px; height: 100p;" alt="Imagem de Aniversário 3" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function releaseConfetti() {
+            for (let i = 0; i < 30; i++) {
+                createConfetti();
+            }
+        }
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(confetti);
+
+            // Remove confetti after animation
+            confetti.addEventListener('animationend', () => {
+                confetti.remove();
+            });
+        }
+    </script>
+</body>
+</html>
