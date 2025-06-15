@@ -1,174 +1,179 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+!<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Aniversário, Amor!</title>
+    <title>Collage </title>
     <style>
         body {
-            background-color: #f8c8d8;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            color: #4a2c2c;
-            animation: fadeIn 2s;
+            font-family: Arial, sans-serif;
+            background-color: #f0e5ff;
+            color: #4a2c91;
             margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-top: 10%;
-            animation: bounce 2s infinite;
-        }
-
-        p {
-            font-size: 1.5em;
-            margin: 20px;
-            line-height: 1.5;
-        }
-
-        .balloon {
-            position: relative;
-            display: inline-block;
-            font-size: 3em;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .balloon:hover {
-            transform: scale(1.1);
-        }
-
-        .container {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin: auto;
-            width: 80%;
-            max-width: 800px;
+            text-align: center;
         }
-
-        .image-gallery {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin-top: 20px;
+        h1 {
+            animation: fadeIn 2s;
         }
-
-        .image-wrapper {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 5px solid transparent;
-            padding: 5px;
-            margin: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .image-wrapper::before {
-            content: '💜🫧';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            font-size: 30px;
-            color: purple;
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
         }
-
-        .image-wrapper::after {
-            content: '💜✨';
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            font-size: 30px;
-            color: purple;
-        }
-
-        .image-gallery img {
+        .photo {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 15px; 
+            display: none; 
         }
-
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: purple;
-            opacity: 0.8;
-            animation: fall 1s forwards;
-            border-radius: 50%;
+        .button {
+            background-color: #4a2c91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            animation: wave 2s infinite; 
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+        @keyframes wave {
+            0%, 100% {
                 transform: translateY(0);
             }
-            40% {
-                transform: translateY(-30px);
-            }
-            60% {
-                transform: translateY(-15px);
+            50% {
+                transform: translateY(-10px); 
             }
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .words {
+            background-color: rgba(255, 230, 247, 0.8); 
+            padding: 20px;
+            border-radius: 50px; 
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
         }
-
-        @keyframes fall {
-            to {
-                transform: translateY(500px);
-                opacity: 0;
-            }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>Feliz Aniversário, Meu Amor!</h1>
-    <div class="container">
-        <p>Hoje é um dia muito especial, e eu quero que você saiba o quanto você é importante para mim.</p>
-        <p>Você ilumina minha vida com seu sorriso e traz alegria ao meu coração. Que este novo ano de vida seja repleto de amor, felicidade e realizações!</p>
-        <p>Te amo muito e sempre estarei ao seu lado, celebrando cada momento juntos.</p>
-        <div class="balloon" onclick="releaseConfetti()">🥳🎉</div>
-        <p>Vamos fazer deste dia o melhor de todos!</p>
-        
-        <div class="image-gallery">
-            <div class="image-wrapper">
-                <img src="https://i.postimg.cc/63KCBqK0/Imagen-de-Whats-App-2025-06-13-a-las-18-24-01-c23f9f67.jpg" style="width: 217px; height: 100p;" alt="Imagem de Aniversário 1" />
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.postimg.cc/6p1H6dbh/1keiner.jpg" style="width: 170px; height: 100p;" alt="Imagem de Aniversário 2" />
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.postimg.cc/pr4fbZL9/img-33.jpg" style="width: 168px; height: 100p;" alt="Imagem de Aniversário 3" />
-            </div>
+<audio id="bgAudio" loop hidden>
+  <source src="https://files.catbox.moe/8nbr1x.mp3" type="audio/mpeg">
+</audio>
+    <h1>collage de amor</h1>
+
+    <div class="collage" id="photoCollage">
+        <div>
+            <button class="button" onclick="showPhoto('photo1')">Mostrar Foto 1</button>
+            <img src="https://i.postimg.cc/LXKbZ23x/mor.jpg" alt="Foto 1" class="photo" id="photo1">
+        </div>
+        <div>
+            <button class="button" onclick="showPhoto('photo2')">Mostrar Foto 2</button>
+            <img src="https://i.postimg.cc/d12S2pWw/mor-2.jpg" alt="Foto 2" class="photo" id="photo2">
+        </div>
+        <div>
+            <button class="button" onclick="showPhoto('photo3')">Mostrar Foto 3</button>
+            <img src="https://i.postimg.cc/J0RYPxgJ/mor-3.jpg" alt="Foto 3" class="photo" id="photo3">
+        </div>
+        <div>
+            <button class="button" onclick="showPhoto('photo4')">Mostrar Foto 4</button>
+            <img src="https://i.postimg.cc/63KCBqK0/Imagen-de-Whats-App-2025-06-13-a-las-18-24-01-c23f9f67.jpg" alt="Foto 4" class="photo" id="photo4">
+        </div>
+        <div>
+            <button class="button" onclick="showPhoto('photo5')">Mostrar Foto 5</button>
+            <img src="https://i.postimg.cc/6p1H6dbh/1keiner.jpg" alt="Foto 5" class="photo" id="photo5">
+        </div>
+        <div>
+            <button class="button" onclick="showPhoto('photo6')">Mostrar Foto 6</button>
+            <img src="https://i.postimg.cc/pr4fbZL9/img-33.jpg" alt="Foto 6" class="photo" id="photo6">
         </div>
     </div>
 
+    <div class="words">
+        <h2>Palabras Bonitas</h2>
+       <p>Hoy celebramos cuatro meses de amor y complicidad junto a mi novia, un tiempo que atesoro profundamente. Quiero expresar mi gratitud por cada instante compartido, por las risas que han iluminado nuestros días y por los abrazos que han sido refugio en momentos difíciles. A pesar de los desafíos que hemos enfrentado, nuestro amor ha demostrado ser resiliente, creciendo y fortaleciéndose con cada experiencia. Agradezco la oportunidad de construir un futuro juntos, lleno de sueños y metas compartidas. Que la vida nos siga brindando momentos de alegría y que nuestro amor continúe floreciendo. Reconozco la presencia de Dios que nos guía y nos une, y agradezco su influencia en nuestro camino. Que sigamos caminando juntos, tomados de la mano, construyendo un amor que perdure en el tiempo, con la bendición divina en cada paso que damos.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; para mi amorcito</p>
+    </div>
+
     <script>
-        function releaseConfetti() {
-            for (let i = 0; i < 30; i++) {
-                createConfetti();
-            }
-        }
-
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.left = Math.random() * 100 + 'vw';
-            confetti.style.animationDelay = Math.random() * 2 + 's';
-            document.body.appendChild(confetti);
-
-            // Remove confetti after animation
-            confetti.addEventListener('animationend', () => {
-                confetti.remove();
+        // Función para mostrar la foto al hacer clic en el botón
+        function showPhoto(photoId) {
+            // Ocultar todas las fotos
+            const photos = document.querySelectorAll('.photo');
+            photos.forEach(photo => {
+                photo.style.display = 'none';
             });
+            // Mostrar la foto seleccionada
+            document.getElementById(photoId).style.display = 'block';
         }
     </script>
+<script>
+  function showPhoto(photoId) {
+    const allPhotos = document.querySelectorAll('.photo');
+
+    allPhotos.forEach(photo => {
+      if (photo.id === photoId) {
+        // Si es la imagen seleccionada, alterna su visibilidad
+        if (photo.style.display === "none" || photo.style.display === "") {
+          photo.style.display = "block";
+        } else {
+          photo.style.display = "none";
+        }
+      } else {
+        // Oculta todas las demás
+        photo.style.display = "none";
+      }
+    });
+  }
+
+  // Al cargar la página, ocultar todas las fotos
+  window.onload = () => {
+    const photos = document.querySelectorAll('.photo');
+    photos.forEach(photo => photo.style.display = 'none');
+  };
+</script>
+<script>
+  function showPhoto(photoId) {
+    const allPhotos = document.querySelectorAll('.photo');
+    
+    allPhotos.forEach(photo => {
+      if (photo.id === photoId) {
+        // Mostrar u ocultar la imagen
+        if (photo.style.display === "none" || photo.style.display === "") {
+          photo.style.display = "block";
+        } else {
+          photo.style.display = "none";
+        }
+      } else {
+        photo.style.display = "none";
+      }
+    });
+
+    // Reproducir audio directamente al hacer clic (inmediato)
+    const audio = document.getElementById('bgAudio');
+    if (audio.paused) {
+      audio.play().catch((e) => {
+        console.warn("Reproducción bloqueada por el navegador:", e);
+      });
+    }
+  }
+
+  window.onload = () => {
+    // Ocultar todas las imágenes al cargar
+    const photos = document.querySelectorAll('.photo');
+    photos.forEach(photo => photo.style.display = 'none');
+  };
+</script>
 </body>
 </html>
